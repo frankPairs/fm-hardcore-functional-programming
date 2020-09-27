@@ -1,0 +1,17 @@
+{
+  "name": "fm-hardcore-functional-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "qunit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "qunit": "^2.11.2"
+  }
+}
