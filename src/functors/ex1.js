@@ -3,7 +3,9 @@
 const { Box } = require("./box");
 
 const moneyToFloat = (str) => {
-  return Box(str).fold((x) => parseFloat(x.replace(/\$/, "")));
+  return Box(str)
+    .map((s) => s.replace(/\$/, ""))
+    .fold(parseFloat);
 };
 
 exports.moneyToFloat = moneyToFloat;

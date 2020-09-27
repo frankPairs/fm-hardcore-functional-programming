@@ -4,7 +4,8 @@ const { Box } = require("./box");
 
 const percentToFloat = (str) => {
   return Box(str)
-    .map((x) => parseFloat(x.replace(/\%/, "")))
+    .map((s) => s.replace(/\%/, ""))
+    .map(parseFloat)
     .fold((float) => float * 0.01);
 };
 
