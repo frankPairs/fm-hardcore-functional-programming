@@ -7,7 +7,12 @@ const { percentToFloat } = require("./ex2");
 const applyDiscount = (price, discount) => {
   return Box(price)
     .map(moneyToFloat)
-    .fold((cents) => cents - cents * Box(discount).fold(percentToFloat));
+    .chain((cents) =>
+      Box(discount)
+        .map(percentToFloat)
+        .map((savings) => cents - cents * savings)
+    )
+    .fold((x) => x);
 };
 
 exports.applyDiscount = applyDiscount;
