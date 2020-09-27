@@ -1,10 +1,12 @@
 // Bonus 2:
 // ============
 // Refactor to pointfree.
-const { sortBy, last, prop, compose } = require("ramda");
+const { sortBy, last, prop, compose, curry } = require("ramda");
 
+const appendStr = curry((newStr, str) => `${str}${newStr}`);
 const fastestCar = compose(
-  (fastest) => fastest.name + " is the fastest",
+  appendStr(" is the fastest"),
+  prop("name"),
   last,
   sortBy(prop("horsepower"))
 );

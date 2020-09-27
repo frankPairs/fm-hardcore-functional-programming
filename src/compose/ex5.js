@@ -4,10 +4,10 @@
 const { formatMoney } = require("accounting");
 const { filter, prop, compose, map, join } = require("ramda");
 
-const formatDollarValues = compose(formatMoney, prop("dollar_value"));
+const formatDollarValue = compose(formatMoney, prop("dollar_value"));
 const availablePrices = compose(
   join(", "),
-  map(formatDollarValues),
+  map(formatDollarValue),
   filter(prop("in_stock"))
 );
 
