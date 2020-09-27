@@ -5,10 +5,6 @@ const { replace, compose, toLower, map, prop } = require("ramda");
 
 const _underscore = replace(/\W+/g, "_"); //<-- leave this alone and use to sanitize
 
-const sanitizeNames = compose(
-  map(_underscore),
-  map(toLower),
-  map(prop("name"))
-);
+const sanitizeNames = map(compose(_underscore, toLower, prop("name")));
 
 exports.sanitizeNames = sanitizeNames;
