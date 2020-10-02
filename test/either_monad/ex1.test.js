@@ -1,4 +1,4 @@
-const { street, streetName } = require("../../src/monads/ex1");
+const { street, streetName } = require("../../src/either-monad/ex1");
 
 QUnit.test("Ex1: street", (assert) => {
   const user = { address: { street: { name: "Willow" } } };

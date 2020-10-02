@@ -1,4 +1,4 @@
-const { startApp } = require("../../src/monads/ex3");
+const { startApp } = require("../../src/either-monad/ex3");
 
 QUnit.test("Ex3: startApp", (assert) => {
   const config = '{"url": "postgres://sally:muppets@localhost:5432/mydb"}';
